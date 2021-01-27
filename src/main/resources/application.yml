@@ -1,3 +1,19 @@
 
 server:
   port: 8888
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 10.2.3.150
+          zk-nodes: 10.2.3.150
+      bindings:
+        helloWorld:
+          consumer:
+            partitioned: true
+            max-attempts: 3
+          group: user
+          content-type: application/json
+
