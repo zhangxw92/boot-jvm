@@ -12,8 +12,6 @@ spring:
       bindings:
         helloWorld:
           consumer:
-            partitioned: true
-            max-attempts: 3
-          group: user
+            autoCommitOffset: false
+            ackMode: MANUAL_IMMEDIATE
           content-type: application/json
-
